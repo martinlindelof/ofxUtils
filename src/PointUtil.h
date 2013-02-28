@@ -2,8 +2,7 @@
 
 #include "ofMain.h"
 
-namespace utils
-{
+namespace utils {
 	class Point
 	{
 		public:
@@ -21,6 +20,5 @@ namespace utils
 			static bool proximity( ofPoint p0, ofPoint p1, float tolerance );
 			static float toDeg( float radians );
 			static float toRad( float angle );
-
-		};	
+	};
 }; // namespace

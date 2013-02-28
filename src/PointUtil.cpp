@@ -1,14 +1,13 @@
 #include "PointUtil.h"
 
-namespace utils
-{
+namespace utils{
 
 	//--------------------------------------------------------------
 	float Point::angle( ofPoint p0 ){
 
 		// get the angle
 		return (atan2(p0.y, p0.x));
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -19,7 +18,7 @@ namespace utils
 		float a = toDeg(atan2((p1.y - p0.y), (p1.x - p0.x)));
 		a = a < 0 ? 360+a : a;
 		return a;
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -27,7 +26,7 @@ namespace utils
 
 		// get the cross product
 		return (p0.x*p1.y - p0.y*p1.x);
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -35,7 +34,7 @@ namespace utils
 
 		// get the distance between first and second point
 		return (sqrt((p0.x-p1.x)*(p0.x-p1.x) + (p0.y-p1.y)*(p0.y-p1.y)));
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -43,7 +42,7 @@ namespace utils
 
 		// get the distance squared between first and second point
 		return ((p0.x-p1.x)*(p0.x-p1.x) + (p0.y-p1.y)*(p0.y-p1.y));
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -51,7 +50,7 @@ namespace utils
 
 		// get the length
 		return (sqrt(p0.x*p0.x + p0.y*p0.y));
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -73,8 +72,8 @@ namespace utils
 		p.x = (p1.x - p0.x) * factor + p0.x;
 		p.y = (p1.y - p0.y) * factor + p0.y;
 
-		return p; 		
-		
+		return p;
+
 	};
 
 	//--------------------------------------------------------------
@@ -87,11 +86,11 @@ namespace utils
 		float angle2 = atan2(y, x)+angle;
 
 		ofPoint p;
-		p.x = p1.x + length*cos(angle2); // this seems weird, 
+		p.x = p1.x + length*cos(angle2); // this seems weird,
 		p.y = p1.y + length*sin(angle2); // should it be angle2?
 
 		return p;
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -103,19 +102,19 @@ namespace utils
 		p.x = length*cos(angle);
 		p.y = length*sin(angle);
 		return p;
-		
+
 	};
 
 	//--------------------------------------------------------------
 	bool Point::proximity( ofPoint p0, ofPoint p1, float tolerance ){
 
 		// see whether first point is almost equal with second point
-		// *with a tolerance value 
+		// *with a tolerance value
 		float x = abs(p0.x - p1.x);
 		float y = abs(p0.y - p1.y);
 		if( x <= tolerance && y <= tolerance ) return true;
 		else return false;
-		
+
 	};
 
 	//--------------------------------------------------------------
@@ -135,4 +134,4 @@ namespace utils
 		return ofDegToRad(angle);
 
 	};
-}; // namespace 
+}; // namespace
